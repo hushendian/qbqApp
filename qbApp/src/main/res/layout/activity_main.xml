@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/include_toolbar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/message"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/btn_bg_base_3"
+        android:scrollbars="vertical"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="下方按钮可上下滑动"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@android:color/holo_red_light"
+        />
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingBottom="60dp"
+        android:layout_weight="1">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/getDwxx"
+                    style="@style/test_item_left"
+                    android:text="单位信息"
+                    app:layout_constraintEnd_toStartOf="@+id/getHtXmxx"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/getHtXmxx"
+                    style="@style/test_item_right"
+                    android:text="合同项目信息"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/getDwxx"
+                    app:layout_constraintTop_toTopOf="@+id/getDwxx" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/getRyxx"
+                    style="@style/test_item_left"
+                    android:text="人员信息"
+                    app:layout_constraintEnd_toStartOf="@+id/setUID"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/getHtXmxx" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/setUID"
+                    style="@style/test_item_right"
+                    android:text="在线下载"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/getRyxx"
+                    app:layout_constraintTop_toTopOf="@+id/getRyxx" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/setFBH"
+                    style="@style/test_item_left"
+                    android:text="离线下载"
+                    app:layout_constraintEnd_toStartOf="@+id/setQBRZ"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/setUID" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/setQBRZ"
+                    style="@style/test_item_right"
+                    android:text="上传起爆日志"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/setFBH"
+                    app:layout_constraintTop_toTopOf="@+id/setFBH" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/getJWD"
+                    style="@style/test_item_left"
+                    android:text="获取经纬度"
+                    app:layout_constraintEnd_toStartOf="@+id/setQBRZ"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/setFBH" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
