@@ -2,8 +2,10 @@ package com.jadlsoft.jadl_tyqbq;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ComponentName;
 import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
@@ -21,8 +23,10 @@ public class MainActivity extends AppCompatActivity {
         setStatusBar();
         findViewById(R.id.jump).setOnClickListener(v -> {
             try {
-                Intent intent = getPackageManager().getLaunchIntentForPackage("com.jadl_tyxqbq.Z4_A8_61");
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
                 intent.putExtra("tzym", "1");
+                intent.setData(Uri.parse("qbq://com.jadl"));
                 startActivity(intent);
             } catch (Exception e) {
                 Log.e("qbgl", "请安装相应的apk");
