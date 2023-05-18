@@ -157,7 +157,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.setQBRZ:
                 if (isAvailable()) {
                     try {
-                        mInterface.setQBRZ("setQBRZ");
+                        Qbqsbxx qbqsbxx = new Qbqsbxx();
+                        qbqsbxx.setBpymc("爆破员名称");
+                        qbqsbxx.setHtid("合同id");
+                        qbqsbxx.setFbh("发编号");
+                        qbqsbxx.setHtmc("合同名称");
+                        qbqsbxx.setJd("经度");
+                        qbqsbxx.setWd("纬度");
+                        qbqsbxx.setXmbh("项目编号");
+                        qbqsbxx.setQbrq("起爆日期");
+                        qbqsbxx.setQbsl("起爆数量");
+                        qbqsbxx.setUid("雷管uid");
+                        mInterface.setQBRZ(GsonUtils.INSTANCE.toJson(qbqsbxx));
                         jumpToQbqGl();
                     } catch (RemoteException e) {
                         throw new RuntimeException(e);
